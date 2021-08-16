@@ -1,8 +1,10 @@
 import { StackScreenProps } from '@react-navigation/stack';
 import React from 'react';
 import { ActivityIndicator, Dimensions, View } from 'react-native';
+import { ScrollView } from 'react-native-gesture-handler';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Carousel from 'react-native-snap-carousel';
+import { HorizontalSlider } from '../components/HorizontalSlider';
 import { MoviePoster } from '../components/MoviePoster';
 import { useMovies } from '../hooks/useMovies';
 import { RootStackParams } from '../navigation/Navigation';
@@ -29,19 +31,25 @@ export const HomeScreen = ({ navigation }: Props) => {
     }
 
     return (
-        <View style={{
+        <ScrollView style={{
             marginTop: top + 20,
         }}>
 
+            {/* Principal Carousel */}
             <View style={{ height: 440 }}>
                 <Carousel
                     data={nowPlaying}
                     renderItem={({ item }: any) => <MoviePoster movie={item} />}
                     sliderWidth={windowWidth}
                     itemWidth={300}
+                    inactiveSlideOpacity={0.9}
                 />
             </View>
 
-        </View>
+            {/* Popular Movies */}
+
+            <HorizontalSlider title="Popular Movies" movies={nowPlaying} />
+
+        </ScrollView>
     )
 }
