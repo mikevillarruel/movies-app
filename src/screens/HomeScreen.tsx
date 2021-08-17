@@ -1,4 +1,3 @@
-import { StackScreenProps } from '@react-navigation/stack';
 import React from 'react';
 import { ActivityIndicator, Dimensions, View } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
@@ -7,13 +6,10 @@ import Carousel from 'react-native-snap-carousel';
 import { HorizontalSlider } from '../components/HorizontalSlider';
 import { MoviePoster } from '../components/MoviePoster';
 import { useMovies } from '../hooks/useMovies';
-import { RootStackParams } from '../navigation/Navigation';
-
-interface Props extends StackScreenProps<RootStackParams, 'HomeScreen'> { }
 
 const { width: windowWidth } = Dimensions.get('window');
 
-export const HomeScreen = ({ navigation }: Props) => {
+export const HomeScreen = () => {
 
     const { nowPlaying, popular, topRated, upcoming, isLoading } = useMovies();
     const { top } = useSafeAreaInsets();
