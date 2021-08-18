@@ -27,12 +27,10 @@ export const HomeScreen = () => {
     }
 
     return (
-        <ScrollView style={{
-            marginTop: top + 20,
-        }}>
+        <ScrollView>
 
             {/* Principal Carousel */}
-            <View style={{ height: 440 }}>
+            <View style={{ height: 440, marginTop: top + 20 }}>
                 <Carousel
                     data={nowPlaying}
                     renderItem={({ item }: any) => <MoviePoster movie={item} />}
