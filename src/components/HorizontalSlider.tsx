@@ -1,7 +1,6 @@
 import React from 'react'
 import { Movie } from '../interfaces/movieInterface';
-import { Text, View } from 'react-native';
-import { FlatList } from 'react-native-gesture-handler';
+import { FlatList, Text, View } from 'react-native';
 import { MoviePoster } from './MoviePoster';
 
 interface Props {
@@ -29,10 +28,10 @@ export const HorizontalSlider = ({ title, movies }: Props) => {
 
             <FlatList
                 data={movies}
-                renderItem={({ item }: any) => (
+                renderItem={({ item }) => (
                     <MoviePoster movie={item} width={140} height={200} />
                 )}
-                keyExtractor={(item: Movie) => item.id.toString()}
+                keyExtractor={(item) => item.id.toString()}
                 horizontal={true}
                 showsHorizontalScrollIndicator={false}
             />
