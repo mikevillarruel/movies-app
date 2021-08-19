@@ -71,6 +71,7 @@ export const MovieDetails = ({ movieFull, cast }: Props) => {
                     showsHorizontalScrollIndicator={false}
                     style={{
                         marginTop: 10,
+                        marginBottom: 30,
                     }}
                 />
             </View>
