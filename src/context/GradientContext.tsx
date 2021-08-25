@@ -1,6 +1,6 @@
 import React, { createContext, useState } from "react";
 
-interface Props {
+interface ProviderProps {
     children: JSX.Element | JSX.Element[];
 }
 
@@ -18,7 +18,7 @@ interface ContextProps {
 
 export const GradientContext = createContext({} as ContextProps); // TODO: definir context
 
-export const GradientProvider = ({ children }: Props) => {
+export const GradientProvider = ({ children }: ProviderProps) => {
 
     const [colors, setColors] = useState<ImageColors>({
         primary: 'transparent',

@@ -5,7 +5,7 @@ import { useFade } from '../hooks/useFade';
 
 export const FadeScreen = () => {
 
-    const {opacity, fadeIn, fadeOut} = useFade();
+    const { opacity, fadeIn, fadeOut } = useFade();
 
     return (
         <View style={{
@@ -29,12 +29,12 @@ export const FadeScreen = () => {
 
             <Button
                 title="FadeIn"
-                onPress={fadeIn}
+                onPress={() => fadeIn()}
             />
 
             <Button
                 title="FadeOut"
-                onPress={fadeOut}
+                onPress={() => fadeOut()}
             />
 
         </View>
